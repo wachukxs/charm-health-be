@@ -1,0 +1,13 @@
+{
+  "name": "charm-health-be",
+  "version": "1.0.0",
+  "description": "backend of charm health hackathon",
+  "main": "index.js",
+  "repository": "https://will-fill-this-later.git",
+  "author": "@wachukxs",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "helmet": "^7.0.0"
+  }
+}
