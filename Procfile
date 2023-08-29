@@ -1,0 +1,1 @@
+web: npm run migrate:undo:all -- --env=$NODE_ENV && npm run migrate:up -- --env=$NODE_ENV && npm run start
