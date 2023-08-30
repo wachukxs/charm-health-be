@@ -20,12 +20,12 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
 
-      Question.hasOne(models.Answer, { // Answer is the target model.
-        foreignKey: 'answerId',
+      Question.hasOne(models.Answer, {
+        foreignKey: 'questionId',
         allowNull: true
       })
 
-      Question.belongsTo(models.Questionnaire, { // Answer is the target model.
+      Question.belongsTo(models.Questionnaire, {
         foreignKey: 'questionnaireId',
         allowNull: false
       })
@@ -46,10 +46,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     question: {
       type: DataTypes.STRING,
-    },
-    answerId: {
-      type: DataTypes.STRING,
-      allowNull: true,
     },
     questionnaireId: {
       type: DataTypes.STRING,
@@ -79,6 +75,6 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Question',
     hooks: {}
   });
-  Question.sync()
+  Question.sync({ force: true })
   return Question;
 };

@@ -53,6 +53,6 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Patient',
     hooks: {}
   });
-  Patient.sync()
+  Patient.sync({ force: true })
   return Patient;
 };

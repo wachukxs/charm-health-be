@@ -18,3 +18,15 @@ module.exports.verifyJWT = (req, res, next) => {
         }
     })
 }
+
+module.exports.verifySession = (req, res, next) => {
+    const _FUNCTIONNAME = 'verifySession'
+    console.log('hitting', _FILENAME, _FUNCTIONNAME);
+
+    if (req.session.questionId) {
+        next()
+    } else {
+        res.sendStatus(401)
+    }
+
+}

@@ -4,7 +4,7 @@ const _FILENAME = path.basename(__filename);
 
 const db = require('../models');
 
-exports.createQuestion = (req, res) => {
+exports.createQuestionnaire = (req, res) => {
     /**
      * TODO: update
      * #swagger.tags = ['Lists']
@@ -29,7 +29,7 @@ exports.createQuestion = (req, res) => {
             }
         }
      */
-    const _FUNCTIONNAME = 'createQuestion'
+    const _FUNCTIONNAME = 'createQuestionnaire'
     console.log('hitting', _FILENAME, _FUNCTIONNAME);
 
     db.List.create({
@@ -55,7 +55,7 @@ exports.createQuestion = (req, res) => {
 }
 
 
-exports.deleteQuestion = (req, res) => {
+exports.deleteQuestionnaire = (req, res) => {
     /**
      * #swagger.tags = ['Tasks']
      * #swagger.parameters['taskId'] = {
@@ -80,7 +80,7 @@ exports.deleteQuestion = (req, res) => {
         }
      */
 
-    const _FUNCTIONNAME = 'deleteTask'
+    const _FUNCTIONNAME = 'deleteQuestionnaire'
     console.log('hitting', _FILENAME, _FUNCTIONNAME);
 
     db.Task.destroy({
@@ -100,7 +100,7 @@ exports.deleteQuestion = (req, res) => {
     }).catch((error) => {
         console.error(`ERR in ${_FILENAME} ${_FUNCTIONNAME}:`, error)
         res.status(501).json({
-            message: 'We could not delete task. An error occured'
+            message: 'We could not delete task. An error occurred'
         })
     })
 

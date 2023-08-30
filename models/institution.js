@@ -62,6 +62,6 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Institution',
     hooks: {}
   });
-  Institution.sync()
+  Institution.sync({ force: true })
   return Institution;
 };

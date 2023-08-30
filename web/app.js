@@ -11,10 +11,9 @@ const swaggerUi = require('swagger-ui-express')
 const cookieParser = require('cookie-parser')
 
 // TODO: auto import every controller
-const taskRoutes = require('../controllers/task-controller')
-const subTaskRoutes = require('../controllers/sub-task-controller')
-const userRoutes = require('../controllers/user-controller')
-const listRoutes = require('../controllers/list-controller')
+const answersRoutes = require('../controllers/answer-controller')
+const questionsRoutes = require('../controllers/question-controller')
+const questionnaireRoutes = require('../controllers/questionnaire-controller')
 
 const app = express();
 
@@ -56,7 +55,7 @@ const swaggerFile = require('../swagger-output.json')
 app.use(['/api/v1.0/docs', '/api/v1.0/doc','/docs?'], swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 
-app.use('/api/v1.0', [taskRoutes, subTaskRoutes, userRoutes, listRoutes])
+app.use('/api/v1.0', [answersRoutes, questionnaireRoutes, questionsRoutes])
 
 app.use(function (req, res) {
     // check the url they navigated to that got them lost, and try to offer suggestions in the front end that'll match why they got lost... maybe they missed a letter in their statecode url

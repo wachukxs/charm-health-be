@@ -58,6 +58,9 @@ module.exports = (sequelize, DataTypes) => {
     providedBy: {
       type: DataTypes.STRING,
     },
+    questionId: {
+        type: DataTypes.STRING,
+    },
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
@@ -71,6 +74,6 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Answer',
     hooks: {}
   });
-  Answer.sync()
+  Answer.sync({ force: true })
   return Answer;
 };

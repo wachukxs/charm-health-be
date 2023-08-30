@@ -75,6 +75,6 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Questionnaire',
     hooks: {}
   });
-  Questionnaire.sync()
+  Questionnaire.sync({ force: true })
   return Questionnaire;
 };
