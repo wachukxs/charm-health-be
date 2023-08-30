@@ -1,0 +1,102 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Charm Health Questionnaire API",
+    "description": "Swagger documentation of our API endpoints.",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3051",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {},
+  "definitions": {
+    "Answer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 1
+        },
+        "createdAt": {
+          "type": "string",
+          "example": "2022-11-25T18:41:24.044Z"
+        },
+        "updatedAt": {
+          "type": "string",
+          "example": "2022-11-25T18:41:24.044Z"
+        }
+      }
+    },
+    "Institution": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 1
+        }
+      }
+    },
+    "Questionnaire": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 3
+        },
+        "name": {
+          "type": "string",
+          "example": "Blunt Trauma"
+        },
+        "code": {
+          "type": "string",
+          "example": "CVFU723-UI8"
+        },
+        "createdAt": {
+          "type": "string",
+          "example": "2022-11-25T18:41:24.044Z"
+        },
+        "updatedAt": {
+          "type": "string",
+          "example": "2022-11-25T18:41:24.044Z"
+        }
+      }
+    },
+    "Question": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 45
+        },
+        "createdAt": {
+          "type": "string",
+          "example": "2022-11-25T18:41:24.044Z"
+        },
+        "updatedAt": {
+          "type": "string",
+          "example": "2022-11-25T18:41:24.044Z"
+        }
+      }
+    },
+    "Patient": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 326
+        },
+        "createdAt": {
+          "type": "string",
+          "example": "2022-11-25T18:41:24.044Z"
+        },
+        "updatedAt": {
+          "type": "string",
+          "example": "2022-11-25T18:41:24.044Z"
+        }
+      }
+    }
+  }
+}
