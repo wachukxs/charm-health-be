@@ -53,3 +53,55 @@ exports.createQuestion = (req, res) => {
         })
     })
 }
+
+
+exports.deleteQuestion = (req, res) => {
+    /**
+     * #swagger.tags = ['Tasks']
+     * #swagger.parameters['taskId'] = {
+            in: 'body',
+            description: 'The task id you want to delete',
+            required: 'true',
+            type: 'string',
+            format: 'utf-8',
+        }
+        #swagger.responses[200] = {
+            description: 'Delete a task. data is an array of 0 or 1 representing true of false if the operation was carried out.',
+            schema: {
+                message: 'Hello, task deleted.',
+                data: [1],
+            }
+        }
+        #swagger.responses[501] = {
+            description: 'We return 501 when an error occured.',
+            schema: {
+                message: 'Hello. An Error Occured.',
+            }
+        }
+     */
+
+    const _FUNCTIONNAME = 'deleteTask'
+    console.log('hitting', _FILENAME, _FUNCTIONNAME);
+
+    db.Task.destroy({
+        where: {
+            id: req.body.taskId
+        }
+    }).then((result) => {
+        res.status(200).json({
+            message: 'Hello, task deleted.',
+            data: result
+        })
+    }, (err) => {
+        console.error(`ERR in ${_FILENAME} ${_FUNCTIONNAME}:`, err)
+        res.status(501).json({
+            message: 'Hello. An Error Occured.',
+        })
+    }).catch((error) => {
+        console.error(`ERR in ${_FILENAME} ${_FUNCTIONNAME}:`, error)
+        res.status(501).json({
+            message: 'We could not delete task. An error occured'
+        })
+    })
+
+}
