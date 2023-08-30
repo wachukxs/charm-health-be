@@ -54,3 +54,18 @@ module.exports.createAnswer = (req, res, next) => {
         next()
     }
 }
+
+module.exports.createQuestion = (req, res, next) => {
+    const _FUNCTIONNAME = 'createQuestion'
+    console.log('hitting', _FILENAME, _FUNCTIONNAME);
+
+    const { error, value } = signInSchema.validate(req.body);
+    if (error) {
+        res.status(400).json({
+            message: 'There is an issue with the data you provided',
+            error
+        })
+    } else {
+        next()
+    }
+}
