@@ -34,13 +34,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-
+      Institution.hasMany(models.Clinician, {
+        foreignKey: 'institutionId',
+      })
     }
   }
 
   /**
    * TODO:
-   * 1. Maybe check if there's a space/spaces between names provided by google and return first/last names accordingly
    */
   Institution.init({
     id: {
@@ -48,6 +49,14 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true, // Or DataTypes.UUIDV1,
       primaryKey: true,
       type: DataTypes.INTEGER, // TODO: make DataTypes.UUID, everywhere else too
+    },
+    addedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: sequelize.models.Clinician,
+        key: 'id'
+      }
     },
     createdAt: {
       type: DataTypes.DATE,
