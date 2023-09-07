@@ -31,7 +31,10 @@ module.exports = (sequelize, DataTypes) => {
 
   /**
    * TODO:
-   * 1. Maybe check if there's a space/spaces between names provided by google and return first/last names accordingly
+   * 1. How do we identify patients that are patients of different hospitals? (Outside the scope of this hackathon?)
+   *    Have a National means of identification, eg Passport Number, SSN (for United States, etc.), DL, NIN (for Nigeria, etc)
+   * 2. How can we tell the questionnaires a patient has answered?
+   *    Do we need a Junction Model?
    */
   Patient.init({
     id: {
@@ -39,6 +42,12 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true, // Or DataTypes.UUIDV1,
       primaryKey: true,
       type: DataTypes.INTEGER, // TODO: make DataTypes.UUID, everywhere else too
+    },
+    email: {
+      type: DataTypes.STRING,
+      validate: {
+        isEmail: true
+      }
     },
     createdAt: {
       type: DataTypes.DATE,
