@@ -7,7 +7,7 @@
   "author": "@wachukxs",
   "scripts": {
     "test": "echo \"Error: no test specified... yet\" && exit 1",
-    "start:dev": "DEV=true nodemon  --ignore '*.json' --exec 'node ./swagger.js && node --trace-warnings --unhandled-rejections=warn ./index.js'",
+    "dev": "DEV=true nodemon  --ignore '*.json' --exec 'node ./swagger.js && node --trace-warnings --unhandled-rejections=warn ./index.js'",
     "overtly-dev": "nodemon --trace-sync-io --trace-warnings --unhandled-rejections=warn ./index.js",
     "start": "node ./swagger.js && node --trace-warnings --unhandled-rejections=warn ./index.js",
     "migrate-db": "node_modules/.bin/sequelize db:migrate",
@@ -19,6 +19,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "chalk": "4.1.2",
     "connect-session-sequelize": "^7.1.7",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
