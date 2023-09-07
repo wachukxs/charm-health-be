@@ -35,7 +35,6 @@ module.exports = (sequelize, DataTypes) => {
 
   /**
    * TODO:
-   * 1. Maybe check if there's a space/spaces between names provided by google and return first/last names accordingly
    */
   Question.init({
     id: {
